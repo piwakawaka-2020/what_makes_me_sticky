@@ -1,8 +1,14 @@
 import React from 'react'
 
+import PlayerForm from './PlayerForm'
+import ScoreBoard from './ScoreBoard'
+
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <div>
+      <PlayerForm />
+      <ScoreBoard />
+    </div>
   )
 }
 
