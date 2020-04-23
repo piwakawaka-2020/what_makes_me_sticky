@@ -4,7 +4,7 @@ const express = require('express')
 const server = express()
 
 server.use(express.json())
-server.use(express.static(path.join(__dirname, './public')))
+server.use(express.static('public'))
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/../public/index.html'))
