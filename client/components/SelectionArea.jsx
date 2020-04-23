@@ -1,9 +1,9 @@
 import React from 'react'
 
-const App = () => {
+const SelectionArea = () => {
   return (
-    <h1>React development has begun!</h1>
+    <div id='selection'></div>
   )
 }
 
-export default App
+export default SelectionArea

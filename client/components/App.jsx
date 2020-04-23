@@ -1,11 +1,13 @@
 import React from 'react'
 
 import GifList from './GifList'
+import SelectionArea from './SelectionArea'
 
 const App = () => {
   return (
     <>
-    <h1>React development has begun!</h1>
+    <h1>Gifs against humanity</h1>
+    <SelectionArea />
     <GifList />
     </>
   )
