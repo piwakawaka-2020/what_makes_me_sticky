@@ -11,6 +11,8 @@ class ScoreBoard extends React.Component {
 
 
   render() {
+    console.log('render')
+    console.log(this.props.players)
     return (
       <div className='scoreBoard'>
         <h1>Score Board</h1>

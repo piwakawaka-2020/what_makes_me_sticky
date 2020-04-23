@@ -6,16 +6,15 @@ import { connect } from 'react-redux'
 class Player extends React.Component {
   
   render() {
-    console.log(this.props)
     return (
       <div className='player'>
         <span>
-          {this.props.player.isActive &&
+          {this.props.isActive &&
             <i className="fas fa-arrow-right"></i>
           }
         </span>
-        <p>{this.props.player.name}</p>
-        <p>{this.props.player.score}</p>
+        <p>{this.props.name}</p>
+        <p>{this.props.score}</p>
       </div>
     )
   }
@@ -23,7 +22,7 @@ class Player extends React.Component {
 
 function mapStateToProps(globalState, ownProps) {
   return {
-    player: globalState.players[ownProps.id]
+    ...globalState.players[ownProps.id]
   }
 }
 
