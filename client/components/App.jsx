@@ -21,8 +21,6 @@ class App extends React.Component {
         }
         <SelectionArea />
         <GifList />
-        <SelectionArea />
-        <GifList />
       </div>
     )
   }
