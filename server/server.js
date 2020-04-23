@@ -1,13 +1,12 @@
 const path = require('path')
 const express = require('express')
 
+const giphyRoutes = require('./giphy')
 const server = express()
 
 server.use(express.json())
 server.use(express.static('public'))
 
-server.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../public/index.html'))
-})
+server.use('/api/v1/giphy', giphyRoutes)
 
 module.exports = server
