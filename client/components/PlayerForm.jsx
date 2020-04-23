@@ -16,6 +16,7 @@ class PlayerForm extends React.Component {
       return {
         id: i,
         name: this.state[player],
+        score: 0,
         isActive: false
       }
     })
