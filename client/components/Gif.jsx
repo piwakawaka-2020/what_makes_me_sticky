@@ -2,7 +2,7 @@ import React from 'react'
 
 const Gif = () => {
   return (
-    <div className='gif'></div>
+    <img className='gif' src='giphy.gif'/>
   )
 }
 
