@@ -12,3 +12,4 @@ server.use('/api/v1/giphy', giphyRoutes)
 server.use('/api/v1/blackcards', questionRoutes)
 
 module.exports = server
+

@@ -1,16 +1,34 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
+import PlayerForm from './PlayerForm'
+import ScoreBoard from './ScoreBoard'
 import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
-const App = () => {
-  return (
-    <>
-    <h1>Gifs against humanity</h1>
-    <SelectionArea />
-    <GifList />
-    </>
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Gifs against humanity</h1>
+        {
+          this.props.players.length < 1 &&
+          <PlayerForm />
+        }
+        {
+          this.props.players.length > 0 &&
+          <ScoreBoard />
+        }
+        <SelectionArea />
+        <GifList />
+      </div>
+    )
+  }
 }
 
-export default App
+function mapStateToProps(globalState) {
+  return {
+    players: globalState.players
+  }
+}
+export default connect(mapStateToProps)(App)
