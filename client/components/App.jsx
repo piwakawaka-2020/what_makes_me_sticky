@@ -14,7 +14,7 @@ import Question from './Question'
   class App extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchGifs('hello'))
+    this.props.dispatch(fetchGifs(this.props.question))
   }
   
   render() {
@@ -46,7 +46,8 @@ import Question from './Question'
 function mapStateToProps(globalState) {
   return {
     players: globalState.players,
-    score: globalState.score
+    score: globalState.score,
+    question: globalState.question
   }
 }
 export default connect(mapStateToProps)(App)
