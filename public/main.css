@@ -90,6 +90,9 @@ input {
     flex-wrap: wrap;
     margin: 0 auto;
     background-color: bisque;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .gif {
@@ -117,6 +120,7 @@ input {
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+    height: 460px;
 }
 
 .score {
