@@ -4,21 +4,21 @@ import { getRandomCard } from '../actions/index'
 
 
 class Question extends React.Component {
-    state = {
-        question: '',
-    }
+    // state = {
+    //     question: '',
+    // }
     
 
     componentDidMount(){
-        this.props.dispatch(getRandomCard())
+        this.props.getRandomCard()
     } 
 
     render () {
-        const { question } = this.props
+        // const { question } = this.props
         return(
             <>
             <div className='question'>
-                What makes me sticky?
+                {this.props.question}
             </div>
             </>
         )
@@ -28,15 +28,15 @@ class Question extends React.Component {
 
 function mapStateToProps(globalState) {
     return {
-      question: globalState.question
+      question: globalState.cards
     }
   }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//       getRandomCard: (question) => dispatch(getRandomCard (question))
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+      getRandomCard: () => dispatch(getRandomCard ())
+    }
+}
   
-export default connect(mapStateToProps)(Question)
+export default connect(mapStateToProps, mapDispatchToProps)(Question)
 

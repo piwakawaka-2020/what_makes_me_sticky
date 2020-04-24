@@ -2,12 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateScore, setActivePlayer } from '../actions/players'
 import { showScore } from '../actions/score'
-import { fetchGifs } from '../actions/index'
+import { fetchGifs, getRandomCard } from '../actions/index'
 
 class Score extends React.Component {
 
   givePoints = e => {
     this.props.dispatch(updateScore(this.props.id))
+    this.changePlayer()
+  }
+
+  noPoints = e => {
     this.changePlayer()
   }
 
@@ -21,7 +25,10 @@ class Score extends React.Component {
     }
     this.props.dispatch(setActivePlayer(this.props.players, newId))
 
-    this.props.dispatch(fetchGifs('car'))
+    this.props.dispatch(getRandomCard())
+      .then(question => {
+        this.props.dispatch(fetchGifs(question.question))
+      })
 
     const selection = document.querySelector('#selection')
     selection.removeChild(selection.children[0])

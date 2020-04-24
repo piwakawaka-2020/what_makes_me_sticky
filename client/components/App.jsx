@@ -7,7 +7,7 @@ import Score from './Score'
 import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
-import {fetchGifs} from '../actions/index'
+import {fetchGifs, getRandomCard} from '../actions/index'
 import { setPlayers } from '../actions/players'
 import Question from './Question'
 
@@ -15,7 +15,10 @@ import Question from './Question'
   class App extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchGifs('hello'))
+    this.props.dispatch(getRandomCard())
+      .then(question => {
+        this.props.dispatch(fetchGifs(question.question))
+      })
   }
 
   buttonPlayAgain = e => {
@@ -53,7 +56,8 @@ import Question from './Question'
 function mapStateToProps(globalState) {
   return {
     players: globalState.players,
-    score: globalState.score
+    score: globalState.score,
+    question: globalState.question
   }
 }
 export default connect(mapStateToProps)(App)
