@@ -11,9 +11,11 @@ import {fetchGifs} from '../actions/index'
 
 
   class App extends React.Component {
+
   componentDidMount() {
     this.props.dispatch(fetchGifs())
   }
+  
   render() {
     return (
       <div>
@@ -26,8 +28,11 @@ import {fetchGifs} from '../actions/index'
           this.props.players.length > 0 &&
           <>
           <ScoreBoard />
-          <Score />
           </>
+        }
+        {
+          this.props.score &&
+          <Score />
         }
         <SelectionArea />
         <GifList />
@@ -39,7 +44,8 @@ import {fetchGifs} from '../actions/index'
 
 function mapStateToProps(globalState) {
   return {
-    players: globalState.players
+    players: globalState.players,
+    score: globalState.score
   }
 }
 export default connect(mapStateToProps)(App)
