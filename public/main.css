@@ -103,6 +103,11 @@ input {
     margin: 10px;
 }
 
+.gif:hover {
+  border: 2px solid rgba(24, 107, 24, 0.541);
+  cursor: pointer;
+}
+
 #selection {
     width: 334px;
     height: 334px;
