@@ -18,3 +18,29 @@ router.get('/randomCard', (req,res) => {
 })
 
 module.exports = router
+
+
+//ALICES CODE 
+
+
+// REDUCER
+// import {  } from "../components/Question"
+
+// const initialState = []
+
+
+// //This gets question, adds question and deletes question
+// const reducer = (state = initialState, action) => {
+//   switch (action.type) {
+//     case GET_QUESTION:
+//       return action.question
+//     case ADD_QUESTION:
+//       return action.question
+//     case 'DEL_QUESTION':
+//       return state.filter((question) => question !== action.question)
+//     default:
+//       return state
+//   }
+// }
+
+// export default reducer
