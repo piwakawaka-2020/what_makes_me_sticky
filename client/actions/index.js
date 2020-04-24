@@ -1,5 +1,7 @@
 import request from 'superagent'
 
+export const GET_CARDS = 'GET_CARDS'
+
 export const getGifs = (gifs) => {
     return {
         type: 'GET_GIFS',
@@ -7,7 +9,12 @@ export const getGifs = (gifs) => {
     }
 }
 
-
+export const getQuestion = (card) => {
+    return {
+        type: 'GET_CARDS',
+        question: card
+    }
+}
 
 export function fetchGifs(searchTerm) {
     return (dispatch) => {
@@ -17,5 +24,15 @@ export function fetchGifs(searchTerm) {
             .then(res => {
                 dispatch(getGifs(res.body))
             })
+    }
+}
+
+export function getRandomCard() {
+    return (dispatch) => {
+        return request
+        .get('/api/v1/blackcards/randomCard')
+        .then(res => {
+            dispatch(getQuestion(res.body))
+        })
     }
 }

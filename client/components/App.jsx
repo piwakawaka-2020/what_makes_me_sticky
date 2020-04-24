@@ -8,6 +8,7 @@ import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
 import {fetchGifs} from '../actions/index'
+import Question from './Question'
 
 
   class App extends React.Component {
@@ -27,11 +28,12 @@ import {fetchGifs} from '../actions/index'
         {
           this.props.players.length > 0 ?
           <>
+          <Question/>
           <div id='topBand'>
           {this.props.score &&
           <Score />}
           <SelectionArea />
-          <ScoreBoard />
+         <ScoreBoard />
           </div>
           <GifList /></> : <></>
         }
