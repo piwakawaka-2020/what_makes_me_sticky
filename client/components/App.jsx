@@ -16,6 +16,11 @@ import Question from './Question'
   componentDidMount() {
     this.props.dispatch(fetchGifs('hello'))
   }
+
+  buttonPlayAgain = e => {
+
+  this.props.dispatch(setPlayers(null))
+  }
   
   render() {
     return (
@@ -33,15 +38,17 @@ import Question from './Question'
           {this.props.score &&
           <Score />}
           <SelectionArea />
-         <ScoreBoard />
+          <ScoreBoard />
           </div>
-          <GifList /></> : <></>
+          <GifList /> 
+            <input type="button" value="Play Again" onClick={this.buttonPlayAgain} />
+          </>
+          : <></>
         }
       </div>
     )
   }
 }
-
 
 function mapStateToProps(globalState) {
   return {

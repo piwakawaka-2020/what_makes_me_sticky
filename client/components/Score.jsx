@@ -35,7 +35,6 @@ class Score extends React.Component {
         <button id='amazing' onClick={this.givePoints}>Amazing</button>
         <button id='rubbish' onClick={this.noPoints}>Rubbish</button>
       </div>
-
     )
   }
 }
