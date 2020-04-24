@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Gif = () => {
+const Gif = (props) => {
     const dragStart = e => {
         const target = e.target
         e.dataTransfer.setData('gifId', target.id)
 
-        setTimeout(() => {
-            target.style.display = 'none'
-        }, 0)
+        // setTimeout(() => {
+        //     target.style.display = 'none'
+        // }, 0)
     }
 
     const dragOver = e => {
@@ -16,9 +16,9 @@ const Gif = () => {
     
     return (
         <img 
-            id='giphy.gif'
+            id={props.id}
             className='gif' 
-            src='giphy.gif'
+            src={props.src}
             onDragStart={dragStart}
             onDragOver={dragOver}
             draggable='true'

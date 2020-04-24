@@ -1,7 +1,11 @@
 import {combineReducers} from 'redux'
-// Import your function here
+
+// Import your function here'
+
+import gifs from './gifs'
 import players from './players'
 
 export default combineReducers({
-  players
+    gifs,
+    players
 })

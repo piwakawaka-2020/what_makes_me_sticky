@@ -6,7 +6,14 @@ import ScoreBoard from './ScoreBoard'
 import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
-class App extends React.Component {
+import {connect} from 'react-redux'
+import {fetchGifs} from '../actions/index'
+
+
+  class App extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(fetchGifs())
+  }
   render() {
     return (
       <div>
@@ -25,6 +32,7 @@ class App extends React.Component {
     )
   }
 }
+
 
 function mapStateToProps(globalState) {
   return {
