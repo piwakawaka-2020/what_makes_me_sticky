@@ -8,6 +8,7 @@ import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
 import {fetchGifs, getRandomCard} from '../actions/index'
+import { setPlayers } from '../actions/players'
 import Question from './Question'
 
 
@@ -18,6 +19,10 @@ import Question from './Question'
       .then(question => {
         this.props.dispatch(fetchGifs(question.question))
       })
+  }
+
+  buttonPlayAgain = e => {
+    this.props.dispatch(setPlayers(null))
   }
   
   render() {
@@ -36,15 +41,17 @@ import Question from './Question'
           {this.props.score &&
           <Score />}
           <SelectionArea />
-         <ScoreBoard />
+          <ScoreBoard />
           </div>
-          <GifList /></> : <></>
+          <GifList /> 
+          </>
+          : <></>
         }
+        <input type="button" value="Play Again" onClick={this.buttonPlayAgain} />
       </div>
     )
   }
 }
-
 
 function mapStateToProps(globalState) {
   return {
