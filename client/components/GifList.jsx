@@ -9,7 +9,7 @@ const GifList = (props) => {
     
   return (
     <div id='gifContainer'>
-        {props.gifs.map(gif => <Gif id={gif.id} src={gif.images.downsized_large.url} />)}
+        {props.gifs.map(gif => <Gif key={gif.id} id={gif.id} src={gif.images.downsized_large.url} />)}
     </div>
   )
 }

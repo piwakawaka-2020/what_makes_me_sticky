@@ -32,7 +32,7 @@ export function getRandomCard() {
     return request
       .get('/api/v1/blackcards/randomCard')
       .then(res => {
-        dispatch(getQuestion(res.body))
+        return dispatch(getQuestion(res.body))
       })
   }
 }

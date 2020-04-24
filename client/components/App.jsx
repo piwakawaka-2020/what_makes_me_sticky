@@ -16,7 +16,7 @@ class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(getRandomCard())
       .then(question => {
-        this.props.dispatch(fetchGifs(question))
+        this.props.dispatch(fetchGifs(question.question))
       })
   }
 

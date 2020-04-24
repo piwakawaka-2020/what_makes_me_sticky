@@ -24,7 +24,7 @@ class Score extends React.Component {
 
     this.props.dispatch(getRandomCard())
     .then(question => {
-      this.props.dispatch(fetchGifs(question))
+      this.props.dispatch(fetchGifs(question.question))
     })
 
     const selection = document.querySelector('#selection')
