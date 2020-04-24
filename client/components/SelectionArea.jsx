@@ -23,7 +23,7 @@ const SelectionArea = props => {
         <div id='selection'
             onDrop={drop}
             onDragOver={dragOver}
-        ></div>
+        >Drag GIF here</div>
     )
 }
 

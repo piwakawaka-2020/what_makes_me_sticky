@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
 html {
-    display: flex;
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgba(24, 107, 24, 0.541);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+    background-color: bisque;
+    font-size: 100px;
+    margin: 0;
+    padding-left: 20px;
+    display: block;
 }
 
 .playerForm {
@@ -7,9 +23,12 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 260px;
+  height: 260px;
   margin: 20px;
   padding: 20px;
   border: 2px solid black;
+  background-color: bisque;
 }
 
 .playerForm label {
@@ -39,10 +58,15 @@ html {
 }
 
 .scoreBoard {
+    width: 224px;
+    height: 224px;
+    display: inline-block;
   padding: 20px;
   margin: 20px;
   border: 2px solid black;
     justify-content: center;
+    border-radius: 10px;
+    background-color: bisque;
 }
 
 #gifContainer {
@@ -50,6 +74,7 @@ html {
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto;
+    background-color: bisque;
 }
 
 .gif {
@@ -61,9 +86,19 @@ html {
 }
 
 #selection {
-    width: 220px;
-    height: 220px;
+    width: 260px;
+    height: 260px;
     border: 2px dashed black;
     border-radius: 10px;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+#topBand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }

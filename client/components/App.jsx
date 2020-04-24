@@ -19,7 +19,7 @@ import {fetchGifs} from '../actions/index'
   render() {
     return (
       <div>
-        <h1>Gifs against humanity</h1>
+        <h1 id='title'>Gifs against humanity</h1>
         {
           this.props.players.length < 1 &&
           <PlayerForm />
@@ -27,8 +27,10 @@ import {fetchGifs} from '../actions/index'
         {
           this.props.players.length > 0 ?
           <>
-          <ScoreBoard />
+          <div id='topBand'>
           <SelectionArea />
+          <ScoreBoard />
+          </div>
           <GifList /></> : <></>
         }
         {
