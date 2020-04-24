@@ -6,7 +6,6 @@ export const setPlayers = players => {
 }
 
 export const setActivePlayer = (players,  id) => {
-  console.log('yes')
   return  {
     type:  'SET_ACTIVE_PLAYER',
     players,
