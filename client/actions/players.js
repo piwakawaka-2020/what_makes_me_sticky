@@ -12,3 +12,10 @@ export const setActivePlayer = (players,  id) => {
     id
   }
 }
+
+export const updateScore = id => {
+  return {
+    type: 'UPDATE_SCORE',
+    id
+  }
+}

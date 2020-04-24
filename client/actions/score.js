@@ -4,3 +4,4 @@ export const showScore = toggle => {
     toggle
   }
 }
+
