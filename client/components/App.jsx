@@ -7,14 +7,17 @@ import Score from './Score'
 import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
-import {fetchGifs} from '../actions/index'
+import {fetchGifs, getRandomCard} from '../actions/index'
 import Question from './Question'
 
 
   class App extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchGifs(this.props.question))
+    this.props.dispatch(getRandomCard())
+      .then(question => {
+        this.props.dispatch(fetchGifs(question.question))
+      })
   }
   
   render() {
