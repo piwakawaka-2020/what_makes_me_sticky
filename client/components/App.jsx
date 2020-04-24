@@ -14,7 +14,7 @@ import Question from './Question'
   class App extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchGifs())
+    this.props.dispatch(fetchGifs('hello'))
   }
   
   render() {
@@ -30,14 +30,12 @@ import Question from './Question'
           <>
           <Question/>
           <div id='topBand'>
+          {this.props.score &&
+          <Score />}
           <SelectionArea />
          <ScoreBoard />
           </div>
           <GifList /></> : <></>
-        }
-        {
-          this.props.score &&
-          <Score />
         }
       </div>
     )
