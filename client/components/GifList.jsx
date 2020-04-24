@@ -2,18 +2,22 @@ import React from 'react'
 
 import Gif from './Gif'
 
-const GifList = () => {
+import {connect} from 'react-redux'
+
+const GifList = (props) => {
+
+    
   return (
     <div id='gifContainer'>
-        <Gif />
-        <Gif />
-        <Gif />
-        <Gif />
-        <Gif />
-        <Gif />
-        <Gif />
+        {props.gifs.map(gif => <Gif id={gif.id} src={gif.images.downsized_large.url} />)}
     </div>
   )
 }
 
-export default GifList
+function mapStateToProps(state) {
+    return {
+        gifs: state.gifs
+    }
+}
+
+export default connect(mapStateToProps)(GifList)
