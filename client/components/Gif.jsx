@@ -4,10 +4,6 @@ const Gif = (props) => {
     const dragStart = e => {
         const target = e.target
         e.dataTransfer.setData('gifId', target.id)
-
-        // setTimeout(() => {
-        //     target.style.display = 'none'
-        // }, 0)
     }
 
     const dragOver = e => {

@@ -13,7 +13,7 @@ import {fetchGifs} from '../actions/index'
   class App extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchGifs())
+    this.props.dispatch(fetchGifs('hello'))
   }
   
   render() {
