@@ -8,6 +8,7 @@ import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
 import {fetchGifs} from '../actions/index'
+import { setPlayers } from '../actions/players'
 import Question from './Question'
 
 
@@ -18,8 +19,7 @@ import Question from './Question'
   }
 
   buttonPlayAgain = e => {
-
-  this.props.dispatch(setPlayers(null))
+    this.props.dispatch(setPlayers(null))
   }
   
   render() {
@@ -41,10 +41,10 @@ import Question from './Question'
           <ScoreBoard />
           </div>
           <GifList /> 
-            <input type="button" value="Play Again" onClick={this.buttonPlayAgain} />
           </>
           : <></>
         }
+        <input type="button" value="Play Again" onClick={this.buttonPlayAgain} />
       </div>
     )
   }
