@@ -90,6 +90,9 @@ input {
     flex-wrap: wrap;
     margin: 0 auto;
     background-color: bisque;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .gif {
@@ -98,6 +101,11 @@ input {
     border: 2px solid black;
     border-radius: 10px;
     margin: 10px;
+}
+
+.gif:hover {
+  border: 2px solid rgba(24, 107, 24, 0.541);
+  cursor: pointer;
 }
 
 #selection {
