@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateScore, setActivePlayer } from '../actions/players'
 import { showScore } from '../actions/score'
+import { fetchGifs } from '../actions/index'
 
 class Score extends React.Component {
 
@@ -19,6 +20,8 @@ class Score extends React.Component {
       newId = 0
     }
     this.props.dispatch(setActivePlayer(this.props.players, newId))
+
+    this.props.dispatch(fetchGifs('car'))
   }
 
   render() {
