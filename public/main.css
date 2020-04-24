@@ -116,5 +116,20 @@ input {
   border: 2px solid black;
   padding: 20px;
   margin: 20px;
+  background-color: bisque;
+}
+
+#amazing {
+    background-color: green;
+    padding: 10px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+}
+
+#rubbish {
+    background-color: red;
+    padding: 10px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
 }
 

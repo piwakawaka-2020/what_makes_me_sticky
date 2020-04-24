@@ -28,15 +28,17 @@ import {fetchGifs} from '../actions/index'
           this.props.players.length > 0 ?
           <>
           <div id='topBand'>
+          {this.props.score &&
+          <Score />}
           <SelectionArea />
           <ScoreBoard />
           </div>
           <GifList /></> : <></>
         }
-        {
+        {/* {
           this.props.score &&
           <Score />
-        }
+        } */}
       </div>
     )
   }

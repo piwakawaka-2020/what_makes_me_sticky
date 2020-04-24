@@ -18,8 +18,8 @@ class Score extends React.Component {
     return (
       <div className='score'>
         <h1>Give {this.props.name} a score</h1>
-        <button onClick={this.givePoints}>Amazing</button>
-        <button onClick={this.noPoints}>Rubbish</button>
+        <button id='amazing' onClick={this.givePoints}>Amazing</button>
+        <button id='rubbish' onClick={this.noPoints}>Rubbish</button>
       </div>
 
     )
