@@ -12,7 +12,6 @@ class PlayerForm extends React.Component {
     e.preventDefault()
 
     const players = Object.keys(this.state).map((player, i) => {
-      console.log(player)
       return {
         id: i,
         name: this.state[player],

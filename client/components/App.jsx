@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import PlayerForm from './PlayerForm'
 import ScoreBoard from './ScoreBoard'
+import Score from './Score'
 import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
@@ -17,7 +18,10 @@ class App extends React.Component {
         }
         {
           this.props.players.length > 0 &&
+          <>
           <ScoreBoard />
+          <Score />
+          </>
         }
         <SelectionArea />
         <GifList />
