@@ -7,6 +7,8 @@ export const getGifs = (gifs) => {
     }
 }
 
+
+
 export function fetchGifs(searchTerm) {
     return (dispatch) => {
         return request

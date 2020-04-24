@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const request = require('superagent')
 
@@ -9,14 +10,11 @@ router.use(express.json())
 
 router.get('/randomCard', (req,res) => {
     //convert JSON file to JS object
-    let cardJson = fs.readFileSync('./CAH.json')
+    let cardsJson = fs.readFileSync(path.resolve(__dirname, '../public/CAH.json'))
     let cards = JSON.parse(cardsJson)
-    return res.json('dummy card')
+    let randomCard = Math.floor(Math.random()*(cards.blackCards.length - 0 + 1)) + 0
+    return res.json(cards.blackCards[randomCard].text)
 
-
-    // function randomNumber(max, min){
-    // return Math.floor(math.random()*(max-min+1))+min
-    // }
 })
 
 module.exports = router
