@@ -9,10 +9,7 @@ class ScoreBoard extends React.Component {
     this.props.dispatch(setActivePlayer(this.props.players, 0))
   }
 
-
   render() {
-    console.log('render')
-    console.log(this.props.players)
     return (
       <div className='scoreBoard'>
         <h1>Score Board</h1>
@@ -22,8 +19,6 @@ class ScoreBoard extends React.Component {
           })
         }
       </div>
-      
-      
     )
   }
 }
