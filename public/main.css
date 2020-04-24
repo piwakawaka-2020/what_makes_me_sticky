@@ -102,3 +102,10 @@ body {
     align-items: center;
     margin: 10px 0;
 }
+
+.score {
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px;
+}
+

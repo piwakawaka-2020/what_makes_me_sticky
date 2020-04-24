@@ -1,12 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { updateScore } from '../actions/players'
+import { showScore } from '../actions/score'
 
 class Score extends React.Component {
+
+  givePoints = e => {
+    this.props.dispatch(updateScore(this.props.id))
+    this.props.dispatch(showScore(false))
+  }
+
+  noPoints = e => {
+    this.props.dispatch(showScore(false))
+  }
 
   render() {
     return (
       <div className='score'>
-        <h1>Give {this.props.activePlayer} a score</h1>
+        <h1>Give {this.props.name} a score</h1>
+        <button onClick={this.givePoints}>Amazing</button>
+        <button onClick={this.noPoints}>Rubbish</button>
       </div>
 
     )
@@ -16,10 +29,9 @@ class Score extends React.Component {
 function mapStateToProps(globalState) {
   const activePlayer = globalState.players.filter(player => player.isActive)
 
-  if(activePlayer[0]) {
-    return {
-      activePlayer: activePlayer.name
-    }
+  console.log()
+  return {
+    ...activePlayer[0]
   }
 }
 
