@@ -9,7 +9,7 @@ const SelectionArea = props => {
 
         const gifId = e.dataTransfer.getData('gifId')
         const gif = document.getElementById(gifId)
-
+        e.target.innerHTML = ''
         e.target.appendChild(gif)
 
         props.dispatch(showScore(true))
