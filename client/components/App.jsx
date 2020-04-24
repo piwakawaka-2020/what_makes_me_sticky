@@ -49,7 +49,8 @@ class App extends React.Component {
 function mapStateToProps(globalState) {
   return {
     players: globalState.players,
-    score: globalState.score
+    score: globalState.score,
+    question: globalState.question
   }
 }
 export default connect(mapStateToProps)(App)
