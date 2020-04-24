@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import PlayerForm from './PlayerForm'
 import ScoreBoard from './ScoreBoard'
+import Score from './Score'
 import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
@@ -10,9 +11,11 @@ import {fetchGifs} from '../actions/index'
 
 
   class App extends React.Component {
+
   componentDidMount() {
     this.props.dispatch(fetchGifs())
   }
+  
   render() {
     return (
       <div>
@@ -28,6 +31,10 @@ import {fetchGifs} from '../actions/index'
           <SelectionArea />
           <GifList /></> : <></>
         }
+        {
+          this.props.score &&
+          <Score />
+        }
       </div>
     )
   }
@@ -36,7 +43,8 @@ import {fetchGifs} from '../actions/index'
 
 function mapStateToProps(globalState) {
   return {
-    players: globalState.players
+    players: globalState.players,
+    score: globalState.score
   }
 }
 export default connect(mapStateToProps)(App)
