@@ -35,10 +35,6 @@ import {fetchGifs} from '../actions/index'
           </div>
           <GifList /></> : <></>
         }
-        {/* {
-          this.props.score &&
-          <Score />
-        } */}
       </div>
     )
   }

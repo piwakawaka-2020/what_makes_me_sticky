@@ -66,6 +66,12 @@ input {
   align-items: center;
 }
 
+.player p {
+    font-size: 30px;
+    margin: 5px 0;;
+    padding: 0px;
+}
+
 .scoreBoard {
     width: 300px;
     height: 300px;
@@ -103,6 +109,7 @@ input {
     justify-content: center;
     align-items: center;
     background-color: bisque;
+    font-size: 60px;
 }
 
 #topBand {
@@ -114,6 +121,7 @@ input {
 
 .score {
   border: 2px solid black;
+  border-radius: 10px;
   padding: 20px;
   margin: 20px;
   background-color: bisque;
@@ -121,6 +129,8 @@ input {
 
 #amazing {
     background-color: green;
+    margin: 5px;
+    border-radius: 10px;
     padding: 10px;
     font-family: 'Bebas Neue', cursive;
     font-size: 50px;
@@ -128,6 +138,8 @@ input {
 
 #rubbish {
     background-color: red;
+    border-radius: 10px;
+    margin: 5px;
     padding: 10px;
     font-family: 'Bebas Neue', cursive;
     font-size: 50px;
