@@ -22,6 +22,10 @@ class Score extends React.Component {
     this.props.dispatch(setActivePlayer(this.props.players, newId))
 
     this.props.dispatch(fetchGifs('car'))
+
+    const selection = document.querySelector('#selection')
+    selection.removeChild(selection.children[0])
+    selection.innerHTML = 'Drag Gif Here'
   }
 
   render() {
