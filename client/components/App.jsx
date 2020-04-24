@@ -22,11 +22,12 @@ import {fetchGifs} from '../actions/index'
           <PlayerForm />
         }
         {
-          this.props.players.length > 0 &&
+          this.props.players.length > 0 ?
+          <>
           <ScoreBoard />
+          <SelectionArea />
+          <GifList /></> : <></>
         }
-        <SelectionArea />
-        <GifList />
       </div>
     )
   }
