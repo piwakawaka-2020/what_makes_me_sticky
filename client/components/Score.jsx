@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateScore, setActivePlayer } from '../actions/players'
 import { showScore } from '../actions/score'
-import { fetchGifs } from '../actions/index'
+import { fetchGifs, getRandomCard } from '../actions/index'
 
 class Score extends React.Component {
 
@@ -11,7 +11,8 @@ class Score extends React.Component {
     this.changePlayer()
   }
 
-  changePlayer() {
+  changePlayer = e => {
+
     this.props.dispatch(showScore(false))
 
     let newId = this.props.id + 1
@@ -21,11 +22,15 @@ class Score extends React.Component {
     }
     this.props.dispatch(setActivePlayer(this.props.players, newId))
 
-    this.props.dispatch(fetchGifs('car'))
+    this.props.dispatch(getRandomCard())
+    .then(question => {
+      this.props.dispatch(fetchGifs(question))
+    })
 
     const selection = document.querySelector('#selection')
     selection.removeChild(selection.children[0])
     selection.innerHTML = 'Drag Gif Here'
+
   }
 
   render() {
@@ -33,7 +38,7 @@ class Score extends React.Component {
       <div className='score'>
         <h1>Give {this.props.name} a score</h1>
         <button id='amazing' onClick={this.givePoints}>Amazing</button>
-        <button id='rubbish' onClick={this.noPoints}>Rubbish</button>
+        <button id='rubbish' onClick={this.changePlayer}>Rubbish</button>
       </div>
 
     )
@@ -49,6 +54,7 @@ function mapStateToProps(globalState) {
     ...activePlayer[0],
     players: globalState.players,
     playerNum: globalState.players.length
+
   }
 }
 

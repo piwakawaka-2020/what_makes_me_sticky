@@ -7,16 +7,19 @@ import Score from './Score'
 import GifList from './GifList'
 import SelectionArea from './SelectionArea'
 
-import {fetchGifs} from '../actions/index'
+import { fetchGifs, getRandomCard } from '../actions/index'
 import Question from './Question'
 
 
-  class App extends React.Component {
+class App extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchGifs('hello'))
+    this.props.dispatch(getRandomCard())
+      .then(question => {
+        this.props.dispatch(fetchGifs(question))
+      })
   }
-  
+
   render() {
     return (
       <div>
@@ -27,15 +30,15 @@ import Question from './Question'
         }
         {
           this.props.players.length > 0 ?
-          <>
-          <Question/>
-          <div id='topBand'>
-          {this.props.score &&
-          <Score />}
-          <SelectionArea />
-         <ScoreBoard />
-          </div>
-          <GifList /></> : <></>
+            <>
+              <Question />
+              <div id='topBand'>
+                {this.props.score &&
+                  <Score />}
+                <SelectionArea />
+                <ScoreBoard />
+              </div>
+              <GifList /></> : <></>
         }
       </div>
     )
